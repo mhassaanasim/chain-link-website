@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain Link - Word Association Game | Mohammad's Portfolio</title>
+    <meta name="description" content="Chain Link: An innovative word association mini-game with pre-designed logical chains. Play online or download for free!">
+    <meta property="og:title" content="Chain Link - Word Association Game">
+    <meta property="og:description" content="Connect the words in logical chains! A unique word association game by Mohammad.">
+    <meta property="og:image" content="chain-link-logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #f5f5dc;
+            background: #1e3a5f;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+        }
+        
+        .logo {
+            width: 300px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: brightness(0) invert(1);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            color: #f5f5dc;
+        }
+        
+        .content {
+            background: #f5f5dc;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            padding: 50px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #1e3a5f;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .abstract {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #1e3a5f;
+            background: linear-gradient(135deg, #e8e6d3, #f0efe5);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #1e3a5f;
+        }
+        
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .screenshot {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot:hover {
+            transform: translateY(-10px);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .screenshot-title {
+            padding: 20px;
+            font-weight: bold;
+            color: #1e3a5f;
+        }
+        
+        .screenshot-desc {
+            padding: 0 20px 20px;
+            color: #5a5a5a;
+            font-size: 0.9rem;
+        }
+        
+        .team-profile {
+            background: linear-gradient(135deg, #e8e6d3, #f0efe5);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #1e3a5f;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f5f5dc;
+            font-size: 3rem;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+        
+        .team-bio {
+            color: #1e3a5f;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .video-container {
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 30px;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #f5f5dc;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .section { padding: 30px 20px; }
+            h1 { font-size: 2.5rem; }
+            .logo { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="chain-link-logo.png" alt="Chain Link Logo" class="logo">
+            <p class="tagline">Connect The Words - The Ultimate Word Association Challenge</p>
+        </header>
+        
+        <div class="content">
+            <!-- Abstract Section -->
+            <section class="section">
+                <h2>📝 About the Game</h2>
+                <div class="abstract">
+                    <strong>Chain Link</strong> is an innovative word association mini-game that challenges players to complete pre-designed chains of logically connected words. Unlike traditional word games, Chain Link features carefully crafted sequences where each word naturally relates to the previous one, creating meaningful connections that test both vocabulary and logical thinking. Players progress through five themed chains (Apple→Pie→Chart, Ocean→Wave→Radio, etc.), with each successful guess revealing the next word in the sequence. The game combines educational value with entertainment, featuring a progressive scoring system, contextual hints, and intuitive gameplay. With its clean responsive interface, hint system, and engaging mechanics, Chain Link offers a fresh take on word association games that appeals to puzzle enthusiasts of all ages. Built with React and modern web technologies.
+                </div>
+            </section>
+            
+            <!-- Screenshots Section -->
+            <section class="section">
+                <h2>📸 Game Screenshots</h2>
+                <div class="screenshots">
+                    <div class="screenshot">
+                        <div class="img" style="background: linear-gradient(45deg, #1e3a5f, #2a4a6b); display: flex; align-items: center; justify-content: center; color: #f5f5dc; font-size: 1.5rem; height: 200px; text-align: center; padding: 20px;">
+                            🎮<br>WELCOME SCREEN
+                        </div>
+                        <div class="screenshot-title">Welcome Screen</div>
+                        <div class="screenshot-desc">Clean, modern interface introducing the game concept with example chains and start button</div>
+                    </div>
+                    <div class="screenshot">
+                        <div class="img" style="background: linear-gradient(45deg, #1e3a5f, #2a4a6b); display: flex; align-items: center; justify-content: center; color: #f5f5dc; font-size: 1.5rem; height: 200px; text-align: center; padding: 20px;">
+                            🔗<br>ACTIVE GAMEPLAY
+                        </div>
+                        <div class="screenshot-title">Active Gameplay</div>
+                        <div class="screenshot-desc">Real-time word chaining showing completed words, current guess input, and chain progress</div>
+                    </div>
+                    <div class="screenshot">
+                        <div class="img" style="background: linear-gradient(45deg, #1e3a5f, #2a4a6b); display: flex; align-items: center; justify-content: center; color: #f5f5dc; font-size: 1.5rem; height: 200px; text-align: center; padding: 20px;">
+                            💡<br>HINT SYSTEM
+                        </div>
+                        <div class="screenshot-title">Hint System</div>
+                        <div class="screenshot-desc">Contextual hints help players discover logical connections between words when stuck</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Team Profile Section -->
+            <section class="section">
+                <h2>👨‍💻 Team Profile</h2>
+                <div class="team-profile">
+                    <div class="team-photo">
+                        MHA
+                    </div>
+                    <div class="team-name">Mohammad Hassaan Asim</div>
+                    <div class="team-bio">
+                        Computer Science student at George Mason University with a passion for game development and interactive web experiences. 
+                        Specialized in React development, game mechanics design, and responsive web applications. I created this game because I love word games like Wordle, Letterboxed, and Strands.
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Key Features Section -->
+            <section class="section">
+                <h2>⭐ Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <div class="feature-title">Pre-designed Chains</div>
+                        <div class="feature-desc">Five carefully crafted word chains with logical connections</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <div class="feature-title">Logical Associations</div>
+                        <div class="feature-desc">Each word naturally relates to the previous one</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-title">Progressive Difficulty</div>
+                        <div class="feature-desc">Chains increase in complexity and abstraction</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <div class="feature-title">Hint System</div>
+                        <div class="feature-desc">Contextual clues help players when stuck</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <div class="feature-title">Score Tracking</div>
+                        <div class="feature-desc">Points awarded for correct guesses and chain completion</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <div class="feature-title">Clean Interface</div>
+                        <div class="feature-desc">Intuitive design focused on gameplay experience</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Video Demo Section -->
+            <section class="section">
+                <h2>🎥 Video Demo</h2>
+                <div class="video-container">
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.5rem; margin-bottom: 10px;">🎬</p>
+                        <p><strong>Video Demo Coming Soon</strong></p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Gameplay walkthrough and feature demonstration</p>
+                    </div>
+                </div>
+            </section>
+            
+        <footer>
+            <p>&copy; 2025 Chain Link Game | GMU CS 325 Summer 2025 | Created by Mohammad</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
+                <strong>Technologies Used:</strong> React, HTML5, CSS3, JavaScript ES6+
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
