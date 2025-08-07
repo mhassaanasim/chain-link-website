@@ -42,12 +42,6 @@
             filter: brightness(0) invert(1);
         }
         
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
         .tagline {
             font-size: 1.3rem;
             opacity: 0.9;
@@ -114,13 +108,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #1e3a5f;
         }
         
         .screenshot-title {
@@ -184,29 +172,6 @@
             font-size: 1.2rem;
         }
         
-        .download-section {
-            text-align: center;
-            margin-top: 30px;
-        }
-        
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin: 10px;
-        }
-        
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-        
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -215,10 +180,10 @@
         }
         
         .feature-card {
-            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            background: linear-gradient(135deg, #e8e6d3, #f0efe5);
             padding: 25px;
             border-radius: 15px;
-            border-left: 5px solid #667eea;
+            border-left: 5px solid #1e3a5f;
             transition: transform 0.3s ease;
         }
         
@@ -233,12 +198,12 @@
         
         .feature-title {
             font-weight: bold;
-            color: #2d3748;
+            color: #1e3a5f;
             margin-bottom: 10px;
         }
         
         .feature-desc {
-            color: #718096;
+            color: #5a5a5a;
             font-size: 0.9rem;
         }
         
@@ -277,23 +242,17 @@
                 <h2>📸 Game Screenshots</h2>
                 <div class="screenshots">
                     <div class="screenshot">
-                        <div class="img" style="background: linear-gradient(45deg, #1e3a5f, #2a4a6b); display: flex; align-items: center; justify-content: center; color: #f5f5dc; font-size: 1.5rem; height: 200px; text-align: center; padding: 20px;">
-                            🎮<br>WELCOME SCREEN
-                        </div>
+                        <img src="ss1.png" alt="Welcome Screen">
                         <div class="screenshot-title">Welcome Screen</div>
                         <div class="screenshot-desc">Clean, modern interface introducing the game concept with example chains and start button</div>
                     </div>
                     <div class="screenshot">
-                        <div class="img" style="background: linear-gradient(45deg, #1e3a5f, #2a4a6b); display: flex; align-items: center; justify-content: center; color: #f5f5dc; font-size: 1.5rem; height: 200px; text-align: center; padding: 20px;">
-                            🔗<br>ACTIVE GAMEPLAY
-                        </div>
+                        <img src="ss2.png" alt="Active Gameplay">
                         <div class="screenshot-title">Active Gameplay</div>
                         <div class="screenshot-desc">Real-time word chaining showing completed words, current guess input, and chain progress</div>
                     </div>
                     <div class="screenshot">
-                        <div class="img" style="background: linear-gradient(45deg, #1e3a5f, #2a4a6b); display: flex; align-items: center; justify-content: center; color: #f5f5dc; font-size: 1.5rem; height: 200px; text-align: center; padding: 20px;">
-                            💡<br>HINT SYSTEM
-                        </div>
+                        <img src="ss3.png" alt="Hint System">
                         <div class="screenshot-title">Hint System</div>
                         <div class="screenshot-desc">Contextual hints help players discover logical connections between words when stuck</div>
                     </div>
@@ -363,7 +322,8 @@
                     </div>
                 </div>
             </section>
-            
+        </div>
+        
         <footer>
             <p>&copy; 2025 Chain Link Game | GMU CS 325 Summer 2025 | Created by Mohammad</p>
             <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
